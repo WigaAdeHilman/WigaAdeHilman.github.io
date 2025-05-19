@@ -1,98 +1,145 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Wiga Ade Hilman</title>
+  <link rel="stylesheet" href="/style/style.css">
+  <script src="script.js" defer></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-CQ7Zf... (dst)" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
 </head>
 <body>
-    <header>
-        <div class="logo">W</div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="home" class="hero">
-        <div class="profile-image"><img src="" alt="Profile Image"></div>
-        <div class="intro">
-            <h2><span>Designer</span> & <span>Coder</span></h2>
-            <p>Web designer in UI design and front-end developer who writes clean and efficient code.</p>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">W</div>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div>
+        <h3><em>Designer</em></h3>
+        <p>web designer in UI design and design system</p>
+      </div>
+      <img src="/assets/image/ppWiga.png" alt="Profile Image" class="profile-img">
+      <div>
+        <h3><em>Coder</em></h3>
+        <p>Front end developer who write clean and efficient code</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LATEST WORK -->
+  <section class="latest-work">
+    <h3>some of my latest work</h3>
+    <div class="work-gallery">
+        <div class="work-item">
+            <img src="/assets/image/work1.png" alt="Work 1">
+            <h4>Online Shop Mockup</h4>
+            <p>Design UI for a responsive e-commerce website with clean layout and user flow.</p>
         </div>
-    </section>
-
-    <section id="about" class="about">
-        <h2>About</h2>
-        <p>Here you will find more information about me, what I do, and my current skills mostly in terms of programming and technology.</p>
-        <div class="about-content">
-            <div class="why-hire">
-                <h3>Why you should hire me</h3>
-                <p>I'm a UI designer specializing in design systems, creating responsive and user-friendly interfaces. I'm also a frontend-focused web developer who builds and manages the front-end of websites and web applications.</p>
-            </div>
-            <div class="skills">
-                <h3>My Skills</h3>
-                <ul>
-                    <li>UI Design</li>
-                    <li>UX Design</li>
-                    <li>Design Systems</li>
-                    <li>Interactive Design</li>
-                    <li>Front-end Development</li>
-                    <li>HTML/CSS</li>
-                    <li>JavaScript</li>
-                </ul>
-            </div>
+        <div class="work-item">
+            <img src="/assets/image/work1.png" alt="Work 2">
+            <h4>UI Redesign Concept</h4>
+            <p>Redesigned a legacy interface with modern UX practices for better engagement.</p>
         </div>
-    </section>
-
-    <section id="portfolio" class="portfolio">
-        <h2>Portfolio</h2>
-        <div class="filter-buttons">
-            <button>All</button>
-            <button>Web Design</button>
-            <button>UI/UX Design</button>
-            <button>Branding</button>
+        <div class="work-item">
+            <img src="/assets/image/work1.png" alt="Work 3">
+            <h4>Sneaker Website</h4>
+            <p>Developed front-end using HTML/CSS and created interactive product sections.</p>
         </div>
-        <div class="portfolio-items">
-            <div class="portfolio-item"><img src="" alt="Project 1"></div>
-            <div class="portfolio-item"><img src="" alt="Project 2"></div>
-            <div class="portfolio-item"><img src="" alt="Project 3"></div>
-            <div class="portfolio-item"><img src="" alt="Project 4"></div>
         </div>
-    </section>
 
-    <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <form>
-            <input type="text" name="name" placeholder="Name">
-            <input type="email" name="email" placeholder="Email">
-            <textarea name="message" placeholder="Message"></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
+  </section>
 
+  <!-- ABOUT -->
+  <section id="about" class="about-section">
+    <h2>About</h2>
+    <p class="desc">Here you will find more information about me, what I do, and my current skills mostly in terms of programming and technology</p>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <h4>Why you should hired me</h4>
+        <p>I'm a UI design especially in design system who can make a responsive design and user friendly design.</p>
+        <p>I'm also a Frontend Focused Web Developer building and managing the Front-end of Websites and Web Applications that leads to the success of the overall product. Check out some of my work in the Projects section.</p>
+      </div>
+      <div class="about-skills">
+        <h4>My Skill</h4>
+        <ul>
+          <li>UI Design</li>
+          <li>UX Design</li>
+          <li>Design System</li>
+          <li>Interactive Design</li>
+          <li>Front-end Developer</li>
+          <li>HTML/CSS</li>
+          <li>Javascript</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="portfolio-section">
+    <h2>Portofolio</h2>
+    <div class="filter-buttons">
+      <button class="active">All</button>
+      <button>Web Design</button>
+      <button>UI/UX Design</button>
+      <button>Branding</button>
+    </div>
+    <div class="portfolio-grid">
+      <img src="/assets/image/porto1.png" alt="">
+      <img src="/assets/image/porto1.png" alt="">
+      <img src="/assets/image/porto1.png" alt="">
+      <img src="/assets/image/porto1.png" alt="">
+      <img src="/assets/image/porto1.png" alt="">
+      <img src="/assets/image/porto1.png" alt="">
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <h2>Contact</h2>
+    <form>
+      <input type="text" placeholder="Name">
+      <input type="email" placeholder="Email">
+      <input type="number" placeholder="Phone">
+      <textarea placeholder="Message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
     <footer>
-        <p>&copy; 2025 Wiga Ade Hilman</p>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="social-icons">
-            <a href="#"><img src="" alt="LinkedIn"></a>
-            <a href="#"><img src="" alt="Instagram"></a>
-            <a href="#"><img src="" alt="Facebook"></a>
-            <a href="#"><img src="" alt="Twitter"></a>
-            <a href="#"><img src="" alt="GitHub"></a>
-        </div>
+    <p>@2025 Wiga Ade Hilman</p>
+    <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <div class="social-icons">
+        <a href="www.linkedin.com/in/wiga-ade-hilman-03a529356"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/wiga_hilman13?igsh=aGg0Z2QwMmVsNDZ4"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/share/1BmcWi1VM4/"><i class="fab fa-facebook"></i></a>
+        <a href="https://x.com/Hhllmmnn11"><i class="fab fa-twitter"></i></a>
+        <a href="https://github.com/WigaAdeHilman"><i class="fab fa-github"></i></a>
+    </div>
     </footer>
+
 </body>
 </html>
