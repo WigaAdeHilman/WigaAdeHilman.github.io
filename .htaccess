@@ -1,0 +1,105 @@
+# Security Configuration for Portfolio Contact Form
+
+# Prevent access to sensitive files
+<Files ~ "^\.">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Protect config directory
+<Directory "config">
+    Order deny,allow
+    Deny from all
+</Directory>
+
+# Prevent direct access to PHP files except allowed ones
+<FilesMatch "\.(php)$">
+    Order deny,allow
+    Deny from all
+</FilesMatch>
+
+# Allow specific PHP files
+<Files "process_contact.php">
+    Order allow,deny
+    Allow from all
+</Files>
+
+<Files "test_connection.php">
+    Order allow,deny
+    Allow from all
+</Files>
+
+# Allow admin directory files
+<Directory "admin">
+    <FilesMatch "\.(php)$">
+        Order allow,deny
+        Allow from all
+    </FilesMatch>
+</Directory>
+
+# Security Headers
+<IfModule mod_headers.c>
+    # Prevent MIME type sniffing
+    Header always set X-Content-Type-Options nosniff
+    
+    # Enable XSS protection
+    Header always set X-XSS-Protection "1; mode=block"
+    
+    # Prevent clickjacking
+    Header always set X-Frame-Options "SAMEORIGIN"
+    
+    # HSTS (uncomment for HTTPS)
+    # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# Enable CORS for AJAX requests
+<IfModule mod_headers.c>
+    Header always set Access-Control-Allow-Origin "*"
+    Header always set Access-Control-Allow-Methods "POST, GET, OPTIONS"
+    Header always set Access-Control-Allow-Headers "Content-Type, Authorization"
+</IfModule>
+
+# Error pages (optional)
+ErrorDocument 403 /error403.html
+ErrorDocument 404 /error404.html
+ErrorDocument 500 /error500.html
+
+# Prevent access to backup and temporary files
+<FilesMatch "\.(bak|backup|swp|tmp)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Cache static files
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+</IfModule>
+
+# Compress files for better performance
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>
+
+# Rate limiting (if mod_evasive is available)
+<IfModule mod_evasive24.c>
+    DOSHashTableSize    2048
+    DOSPageCount        10
+    DOSPageInterval     1
+    DOSSiteCount        50
+    DOSSiteInterval     1
+    DOSBlockingPeriod   600
+</IfModule>
